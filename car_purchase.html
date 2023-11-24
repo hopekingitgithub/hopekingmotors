@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thank You for Your Purchase</title>
+</head>
+<body>
+    <h1>Thank You for Your Purchase</h1>
+
+    <h2>Your Cart Contents:</h2>
+    <ul id="cart-items">
+        <!-- This is where you can dynamically display the items in the cart -->
+    </ul>
+
+    <h2>Total Amount: Ksh <span id="cart-total">0</span></h2>
+
+    <p>Thank you for your purchase. Your items will be shipped to you shortly.</p>
+
+    <p><a href="index.html">Back to Home</a></p>
+
+
+
+// Sample JavaScript code to populate cart items and total (adjust as per your shopping cart implementation)
+const cart = [
+    { name: 'Toyota Land Cruiser V8', price: 12000000 },
+    // Add more items as needed
+];
+
+const cartItems = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+let total = 0;
+
+cart.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${item.name} - Ksh ${item.price}`;
+    cartItems.appendChild(listItem);
+    total += item.price;
+});
+
+cartTotal.textContent = total;
+</body>
+</html>
